@@ -4,7 +4,9 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Analyzen\\Candidate\\": "src/"
+            "Analyzen\\Candidate\\": "src/",
+            "Analyzen\\Candidate\\Database\\Factories\\": "database/factories/",
+            "Analyzen\\Candidate\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "extra": {
@@ -20,6 +22,11 @@
             "email": "newtonss919@gmail.com"
         }
     ],
+    "autoload-dev": {
+        "psr-4": {
+            "Analyzen\\Auth\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }
