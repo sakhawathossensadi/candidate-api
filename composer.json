@@ -7,6 +7,13 @@
             "Analyzen\\Candidate\\": "src/"
         }
     },
+    "extra": {
+        "laravel" : {
+            "providers": [
+                "Analyzen\\Candidate\\ServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "sakhawathossensadi",
