@@ -1,20 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Analyzen\Auth\Http\Controllers\UserController;
+use Analyzen\Candidate\Http\Controllers\CandidateController;
 
 Route::group(
     [
         'middleware' => 'api',
-        'prefix' => 'admin',
+        'prefix' => 'candidate',
     ],
     function () {
-        Route::group(['middleware' => 'auth:api'], function () {
-            Route::get('candidates', [UserController::class, 'index'])->name('candidates');
+        Route::group(['middleware' => 'guest:api'], function () {
+            Route::post('register', [CandidateController::class, 'register'])->name('candidate.registration');
         });
     }
 );
-
-Route::get('hi', function () {
-    return "hello";
-});
