@@ -24,7 +24,7 @@
     ],
     "autoload-dev": {
         "psr-4": {
-            "Analyzen\\Auth\\Tests\\": "tests/"
+            "Analyzen\\Candidate\\Tests\\": "tests/"
         }
     },
     "require-dev": {
