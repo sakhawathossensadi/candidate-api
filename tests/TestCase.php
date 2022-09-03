@@ -22,7 +22,6 @@ class TestCase extends OrchestraTestCase
         $this->artisan('migrate')->run();
 
         $candidate = Candidate::factory()->create();
-        // dd($candidate);
         $this->candidate = $candidate;
     }
 
@@ -54,8 +53,8 @@ class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            'Analyzen\\Candidate\\ServiceProvider',
-            'Analyzen\\Candidate\\AuthServiceProvider',
+            'Analyzen\\Auth\\ServiceProvider',
+            'Analyzen\\Auth\\AuthServiceProvider',
             PassportServiceProvider::class,
             ServiceProvider::class,
         ];
