@@ -14,3 +14,15 @@ Route::group(
         });
     }
 );
+
+Route::group(
+    [
+        'middleware' => ['auth:api'],
+        'prefix' => 'candidate'
+    ],
+    function () {
+        Route::get('hello', function () {
+            return "af";
+        });
+    }
+);
