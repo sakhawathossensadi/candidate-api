@@ -2,6 +2,7 @@
 
 namespace Analyzen\Candidate;
 
+use Analyzen\Candidate\Console\Command\DataSeedCommand;
 use Illuminate\Support\ServiceProvider as SupportServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +13,10 @@ class ServiceProvider extends SupportServiceProvider
     public function register()
     {
         $this->rootPath = realpath(__DIR__ . '/../');
+
+        $this->commands([
+            DataSeedCommand::class
+        ]);
     }
 
     public function boot()
