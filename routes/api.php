@@ -12,17 +12,9 @@ Route::group(
         Route::group(['middleware' => 'guest:api'], function () {
             Route::post('register', [CandidateController::class, 'register'])->name('candidate.registration');
         });
-    }
-);
 
-Route::group(
-    [
-        'middleware' => ['auth:api'],
-        'prefix' => 'candidate'
-    ],
-    function () {
-        Route::get('hello', function () {
-            return "af";
+        Route::group(['middleware' => 'auth:api'], function () {
+            Route::post('quiz', [CandidateController::class, 'quiz'])->name('candidate.quiz');
         });
     }
 );
