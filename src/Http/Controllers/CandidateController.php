@@ -22,6 +22,13 @@ class CandidateController extends BaseController
         return response(new CandidateResource($candidate), 201);
     }
 
+    public function profile(Request $request)
+    {
+        $candidate = $request->user();
+
+        return new CandidateResource($candidate);
+    }
+
     public function quiz(Request $request)
     {
         $candidate = $request->user();
