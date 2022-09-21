@@ -12,4 +12,18 @@ class CandidateApiTest extends TestCase
 
         $this->assertTrue(true);
     }
+
+    public function tests_candidate_profile()
+    {
+        $this->withExceptionHandling();
+
+        $candidate = $this->candidate;
+
+        $response = $this->actingAs($this->candidate, 'api')
+            ->getJson(route('candidate.profile'));
+
+        $response->assertJsonFragment([
+            'name' => $candidate->name,
+        ]);
+    }
 }
