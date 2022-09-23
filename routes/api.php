@@ -17,6 +17,7 @@ Route::group(
             Route::get('profile', [CandidateController::class, 'profile'])->name('candidate.profile');
             Route::post('quiz', [CandidateController::class, 'quiz'])->name('candidate.quiz');
             Route::get('questions', [CandidateController::class, 'getQuestions'])->name('get.questions');
+            Route::get('hello', [CandidateController::class, 'ad']);
         });
     }
 );

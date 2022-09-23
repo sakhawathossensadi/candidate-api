@@ -66,4 +66,9 @@ class CandidateController extends BaseController
             'mark' => "Obtained mark : " . (string) $count,
         ]);
     }
+
+    public function ad(Request $request)
+    {
+        return "hee";
+    }
 }
