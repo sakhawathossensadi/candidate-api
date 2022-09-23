@@ -4,6 +4,7 @@ namespace Analyzen\Candidate\Http\Controllers;
 
 use Analyzen\Candidate\Http\Requests\CandidateRequest;
 use Analyzen\Candidate\Http\Resources\CandidateResource;
+use Analyzen\Candidate\Http\Resources\QuestionResource;
 use Analyzen\Candidate\Models\Candidate;
 use Analyzen\Candidate\Models\Question;
 use Illuminate\Http\Request;
@@ -27,6 +28,13 @@ class CandidateController extends BaseController
         $candidate = $request->user();
 
         return new CandidateResource($candidate);
+    }
+
+    public function getQuestions(Request $request)
+    {
+        $questions = Question::all();
+
+        return QuestionResource::collection($questions);
     }
 
     public function quiz(Request $request)

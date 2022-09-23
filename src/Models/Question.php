@@ -20,4 +20,9 @@ class Question extends Model
         'option_d',
         'answer',
     ];
+
+    protected static function newFactory()
+    {
+        return \Analyzen\Candidate\Database\Factories\QuestionFactory::new();
+    }
 }

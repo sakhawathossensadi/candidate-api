@@ -15,6 +15,7 @@ Route::group(
 
         Route::group(['middleware' => 'auth:api'], function () {
             Route::get('profile', [CandidateController::class, 'profile'])->name('candidate.profile');
+            Route::get('questions', [CandidateController::class, 'getQuestions'])->name('get.questions');
             Route::post('quiz', [CandidateController::class, 'quiz'])->name('candidate.quiz');
         });
     }
